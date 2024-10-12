@@ -70,11 +70,27 @@
 
 	<build>
 		<plugins>
+			<!-- Plugin do Spring Boot -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!-- Plugin para especificar a Main-Class no JAR -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>me.dio.Application</mainClass> <!-- Substitua pelo nome completo da sua classe principal -->
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
